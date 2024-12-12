@@ -1,0 +1,177 @@
+:root {
+  /* Color Palette */
+  --color-background-dark: #0F1020;
+  --color-background-medium: #1C2541;
+  --color-primary: #5C7AEA;
+  --color-secondary: #B1D4E0;
+  --color-text-light: #F0F4F8;
+  --color-accent-green: #48BB78;
+  --color-accent-red: #E53E3E;
+  --color-accent-yellow: #ECC94B;
+
+  /* Responsive Typography */
+  --font-size-base: clamp(16px, 2vw, 18px);
+  --font-size-large: clamp(1.5rem, 4vw, 2.5rem);
+
+  /* Spacing */
+  --spacing-small: clamp(10px, 2vw, 20px);
+  --spacing-medium: clamp(20px, 4vw, 40px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, var(--color-background-dark), var(--color-background-medium));
+  color: var(--color-text-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-small);
+  line-height: 1.6;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(28, 37, 65, 0.9);
+  border-radius: 20px;
+  padding: var(--spacing-medium);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(92, 122, 234, 0.2);
+  transition: all 0.4s ease;
+}
+
+.game-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: var(--font-size-large);
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-medium);
+  letter-spacing: 2px;
+}
+
+.game-modes {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+}
+
+.mode-button {
+  flex: 1;
+  max-width: 200px;
+  padding: 12px;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mode-button:hover,
+.mode-button.active {
+  background-color: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+}
+
+.player-panel {
+  flex: 1;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--spacing-small);
+  border-radius: 15px;
+  border: 1px solid rgba(92, 122, 234, 0.2);
+}
+
+.weapon-display {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  background: rgba(92, 122, 234, 0.1);
+}
+
+.weapon-choice {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-small);
+  flex-wrap: nowrap;
+}
+
+.weapon {
+  width: calc(33.33% - var(--spacing-small));
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(2rem, 10vw, 3rem);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: calc(var(--spacing-small) / 2);
+}
+
+.weapon:hover {
+  background-color: rgba(92, 122, 234, 0.2);
+  transform: scale(1.1);
+}
+
+.weapon:active {
+  transform: scale(0.9);
+}
+
+.result-display {
+  text-align: center;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin-top: var(--spacing-small);
+  height: 50px;
+  font-weight: 700;
+}
+
+.result-win {
+  color: var(--color-accent-green);
+}
+
+.result-lose {
+  color: var(--color-accent-red);
+}
+
+.result-draw {
+  color: var(--color-accent-yellow);
+}
+
+@media screen and (max-width: 480px) {
+  .game-container {
+    padding: var(--spacing-small);
+    border-radius: 15px;
+  }
+
+  .weapon {
+    width: calc(50% - var(--spacing-small));
+  }
+}

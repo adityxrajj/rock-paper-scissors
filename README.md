@@ -21,7 +21,7 @@ Welcome to the **Rock Paper Scissors** game! This project is a web-based impleme
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://adityxrajj.github.io/rock-paper-scissors/
+   git clone https://github.com/adityxrajj/rock-paper-scissors.git
    ```
 
 2. Navigate to the project directory:
